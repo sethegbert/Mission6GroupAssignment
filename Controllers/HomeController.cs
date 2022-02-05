@@ -23,5 +23,11 @@ namespace Mission6GroupAssignment.Controllers
         {
             return View();
         }
+
+        public IActionResult Quadrants()
+        {
+            var tasks = quadrantContext.Responses.Include(x => x.Category).ToList();
+            return View(tasks);
+        }
     }
 }

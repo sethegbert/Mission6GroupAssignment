@@ -34,6 +34,36 @@ namespace Mission6GroupAssignment.Models
                     DueDate = "03-01-2022",
                     Completed = false, 
                     CategoryID = 1
+                },
+
+                new Quadrant
+                {
+                    EntryId = 2,
+                    QuadrantNumber = 2,
+                    Task = "Eat Food",
+                    DueDate = "03-02-2022",
+                    Completed = false, 
+                    CategoryID = 1
+                },
+
+                new Quadrant
+                {
+                    EntryId = 3,
+                    QuadrantNumber = 3,
+                    Task = "Dance",
+                    DueDate = "03-03-2022",
+                    Completed = false,
+                    CategoryID = 2
+                },
+
+                new Quadrant
+                {
+                    EntryId = 4,
+                    QuadrantNumber = 4,
+                    Task = "Play Piano",
+                    DueDate = "03-05-2022",
+                    Completed = false,
+                    CategoryID = 4
                 }
             );
         }

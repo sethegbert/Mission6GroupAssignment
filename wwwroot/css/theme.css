@@ -1,0 +1,62 @@
+﻿div {
+    font-family: 'Just Another Hand', cursive;
+}
+
+.sketchy {
+    padding: 0.8rem 0.8rem;
+    display: inline-block;
+    border: 3px solid #333333;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    letter-spacing: 0.3ch;
+    background: #ffffff;
+    position: relative;
+    &::before
+
+{
+    content: '';
+    border: 2px solid #353535;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+    border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+}
+
+}
+
+.sketchunder {
+    border-bottom: 5px solid #333333;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.redButton {
+    border: 3px solid red;
+    border-radius: 5px;
+    background: LightCoral;
+    margin-right: 6px;
+}
+
+    .redButton:hover {
+        color: white;
+        background-color: red;
+    }
+
+.greenButton {
+    border: 3px solid green;
+    border-radius: 5px;
+    background: LightGreen;
+    margin: 3px;
+}
+
+    .greenButton:hover {
+        color: white;
+        background-color: green;
+    }
