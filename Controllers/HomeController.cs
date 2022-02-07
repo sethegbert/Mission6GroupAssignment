@@ -77,11 +77,11 @@ namespace Mission6GroupAssignment.Controllers
 
         //delete get
         [HttpGet]
-        public IActionResult Delete (int entryid)
+        public IActionResult Delete (int EntryId)
         {
-            var DeleteTask = quadrantContext.Responses.Single(x => x.EntryId == entryid);
+            var task = quadrantContext.Responses.Single(x => x.EntryId == EntryId);
 
-            return View(DeleteTask);
+            return View(task);
         }
 
         //delete post
@@ -91,7 +91,7 @@ namespace Mission6GroupAssignment.Controllers
             quadrantContext.Responses.Remove(qd);
             quadrantContext.SaveChanges();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Quadrants");
         }
     }
 }
