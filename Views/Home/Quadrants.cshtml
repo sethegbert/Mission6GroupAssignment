@@ -3,8 +3,6 @@
 }
 @model List<Quadrant>
 
-<link rel="stylesheet" href="~/css/theme.css" />
-
 <h1 class="text-center" style="margin: 20px;">Time Management Matrix</h1>
 
 <div>
@@ -31,26 +29,26 @@
             {
                 @if (x.QuadrantNumber == 1)
                 {
-                <div class="row">
-                    <div class="col">
-                        <p>@x.Task</p>
+                    <div class="row">
+                        <div class="col">
+                            <p>@x.Task</p>
+                        </div>
+                        <div class="col">
+                            <p>@x.DueDate</p>
+                        </div>
+                        <div class="col-2 align-self-center greenButton">
+                            <a class="center" asp-controller="Home" asp-action="Edit" asp-route-entryid="@x.EntryId">Edit</a>
+                        </div>
+                        <div class="col-2 align-self-center redButton">
+                            <a class="center">Delete</a>
+                        </div>
                     </div>
-                    <div class="col">
-                        <p>@x.DueDate</p>
-                    </div>
-                    <div class="col-2 align-self-center greenButton">
-                        <a class="center">Edit</a>
-                    </div>
-                    <div class="col-2 align-self-center redButton">
-                        <a class="center">Delete</a>
-                    </div>
-                </div>
                 }
             }
         </div>
 
 
-    
+
         <div class="col sketchy" style="margin: 5px;">
             @foreach (var x in Model)
             {
@@ -64,7 +62,7 @@
                             <p>@x.DueDate</p>
                         </div>
                         <div class="col-2 align-self-center greenButton">
-                            <a class="center">Edit</a>
+                            <a class="center" asp-controller="Home" asp-action="Edit" asp-route-entryid="@x.EntryId">Edit</a>
                         </div>
                         <div class="col-2 align-self-center redButton">
                             <a class="center">Delete</a>
@@ -94,7 +92,7 @@
                             <p>@x.DueDate</p>
                         </div>
                         <div class="col-2 align-self-center greenButton">
-                            <a class="center">Edit</a>
+                            <a class="center" asp-controller="Home" asp-action="Edit" asp-route-entryid="@x.EntryId">Edit</a>
                         </div>
                         <div class="col-2 align-self-center redButton">
                             <a class="center">Delete</a>
@@ -116,7 +114,7 @@
                             <p>@x.DueDate</p>
                         </div>
                         <div class="col-2 align-self-center greenButton">
-                            <a class="center">Edit</a>
+                            <a class="center" asp-controller="Home" asp-action="Edit" asp-route-entryid="@x.EntryId">Edit</a>
                         </div>
                         <div class="col-2 align-self-center redButton">
                             <a class="center">Delete</a>
