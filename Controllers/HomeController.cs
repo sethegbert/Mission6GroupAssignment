@@ -29,5 +29,20 @@ namespace Mission6GroupAssignment.Controllers
             var tasks = quadrantContext.Responses.Include(x => x.Category).ToList();
             return View(tasks);
         }
+
+        [HttpGet]
+        public IActionResult Delete(int EntryId)
+        {
+            var task = quadrantContext.Responses.Single(x => x.EntryId == EntryId);
+            return View(task);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Quadrant qd)
+        {
+            quadrantContext.Responses.Remove(qd);
+            quadrantContext.SaveChanges();
+            return RedirectToAction("Quadrants");
+        }
     }
 }
