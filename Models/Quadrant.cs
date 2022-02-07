@@ -17,6 +17,7 @@ namespace Mission6GroupAssignment.Models
 
         public string DueDate { get; set; }
 
+        [Required]
         public int QuadrantNumber { get; set; }
 
         public bool Completed { get; set; }
