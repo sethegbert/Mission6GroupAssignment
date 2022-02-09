@@ -26,7 +26,7 @@ namespace Mission6GroupAssignment.Controllers
 
         //add task get
         [HttpGet]
-        public IActionResult AddTask()
+        public IActionResult AddTask()  //new form
         {
             ViewBag.Categories = quadrantContext.Categories.ToList();
 
@@ -35,7 +35,7 @@ namespace Mission6GroupAssignment.Controllers
 
         //add task post
         [HttpPost]
-        public IActionResult AddTask(Quadrant qd)
+        public IActionResult AddTask(Quadrant qd) //new form
         {
             ViewBag.Categories = quadrantContext.Categories.ToList();
 
@@ -44,13 +44,13 @@ namespace Mission6GroupAssignment.Controllers
                 quadrantContext.Add(qd);
                 quadrantContext.SaveChanges();
 
-                return View(qd);
+                return View("Confirmation", qd);
             }
             else
             {
                 ViewBag.Categories = quadrantContext.Categories.ToList();
 
-                return View();
+                return View(); //add qd?
             }
         }
 
@@ -60,7 +60,7 @@ namespace Mission6GroupAssignment.Controllers
         {
             ViewBag.Categories = quadrantContext.Categories.ToList();
 
-            var EditTask = quadrantContext.Responses.Single(x => x.EntryId == EntryId);
+            var EditTask = quadrantContext.Responses.Single(x => x.EntryId == EntryId); //application var
 
             return View("AddTask", EditTask);
         }
