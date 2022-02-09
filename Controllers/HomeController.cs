@@ -50,7 +50,7 @@ namespace Mission6GroupAssignment.Controllers
             {
                 ViewBag.Categories = quadrantContext.Categories.ToList();
 
-                return View(); //add qd?
+                return View(); //add qd..?
             }
         }
 
