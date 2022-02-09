@@ -93,5 +93,15 @@ namespace Mission6GroupAssignment.Controllers
 
             return RedirectToAction("Quadrants");
         }
+
+        public IActionResult Quadrants ()
+        { 
+            var tasks = quadrantContext.Responses
+                .Include(x => x.Category)
+                .OrderBy(x => x.DueDate)
+                .Where(x => x.Completed == false)
+                .ToList();
+            return Veiw(tasks)
+        }
     }
 }
