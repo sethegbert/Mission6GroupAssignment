@@ -35,6 +35,8 @@ namespace Mission6GroupAssignment.Controllers
         [HttpPost]
         public IActionResult NewForm(Quadrant qd) //new form
         {
+            ViewBag.Categories = quadrantContext.Categories.ToList();
+        
             if (ModelState.IsValid)
             {
                 quadrantContext.Add(qd);
@@ -68,7 +70,7 @@ namespace Mission6GroupAssignment.Controllers
 
             return RedirectToAction("Quadrants");
         }
-
+        
         //delete get
         [HttpGet]
         public IActionResult Delete(int EntryId)
