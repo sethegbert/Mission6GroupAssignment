@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Mission6GroupAssignment.Models;
@@ -25,7 +25,7 @@ namespace Mission6GroupAssignment.Controllers
         }
 
         [HttpGet]
-        public IActionResult NewForm()  //new form
+        public IActionResult NewForm()
         {
             ViewBag.Categories = quadrantContext.Categories.ToList();
 
@@ -33,10 +33,10 @@ namespace Mission6GroupAssignment.Controllers
         }
 
         [HttpPost]
-        public IActionResult NewForm(Quadrant qd) //new form
+        public IActionResult NewForm(Quadrant qd)
         {
             ViewBag.Categories = quadrantContext.Categories.ToList();
-        
+
             if (ModelState.IsValid)
             {
                 quadrantContext.Add(qd);
@@ -68,10 +68,10 @@ namespace Mission6GroupAssignment.Controllers
             quadrantContext.Update(qd);
             quadrantContext.SaveChanges();
 
-            return RedirectToAction("Quadrants");
+            return RedirectToAction("Index");
         }
-        
-        //delete get
+
+
         [HttpGet]
         public IActionResult Delete(int EntryId)
         {
@@ -80,7 +80,7 @@ namespace Mission6GroupAssignment.Controllers
             return View(task);
         }
 
-        //delete post
+
         [HttpPost]
         public IActionResult Delete(Quadrant qd)
         {
