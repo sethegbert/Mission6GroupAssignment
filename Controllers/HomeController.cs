@@ -25,7 +25,7 @@ namespace Mission6GroupAssignment.Controllers
         }
 
         [HttpGet]
-        public IActionResult NewForm()
+        public IActionResult NewForm()  //new form
         {
             ViewBag.Categories = quadrantContext.Categories.ToList();
 
@@ -33,7 +33,7 @@ namespace Mission6GroupAssignment.Controllers
         }
 
         [HttpPost]
-        public IActionResult NewForm(Quadrant qd)
+        public IActionResult NewForm(Quadrant qd) //new form
         {
             if (ModelState.IsValid)
             {
@@ -55,15 +55,34 @@ namespace Mission6GroupAssignment.Controllers
         {
             ViewBag.Categories = quadrantContext.Categories.ToList();
 
-            var application = quadrantContext.Responses.Single(x => x.EntryId == entryid);
+            var EditTask = quadrantContext.Responses.Single(x => x.EntryId == entryid);
 
-            return View("NewForm", application);
+            return View("NewForm", EditTask);
         }
 
         [HttpPost]
         public IActionResult Edit(Quadrant qd)
         {
             quadrantContext.Update(qd);
+            quadrantContext.SaveChanges();
+
+            return RedirectToAction("Quadrants");
+        }
+
+        //delete get
+        [HttpGet]
+        public IActionResult Delete(int EntryId)
+        {
+            var task = quadrantContext.Responses.Single(x => x.EntryId == EntryId);
+
+            return View(task);
+        }
+
+        //delete post
+        [HttpPost]
+        public IActionResult Delete(Quadrant qd)
+        {
+            quadrantContext.Responses.Remove(qd);
             quadrantContext.SaveChanges();
 
             return RedirectToAction("Quadrants");
