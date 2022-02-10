@@ -2,15 +2,10 @@
     ViewData["Title"] = "Quadrant";
 }
 @model List<Quadrant>
-
-<link rel="stylesheet" href="~/css/theme.css" />  
-  
-<h1 class="text-center" style="margin: 20px;">Time Management Matrix</h1>
-
-<div>
+    <link rel="stylesheet" href="~/css/theme.css" />
+    <h1 class="text-center" style="margin: 20px;">Time Management Matrix</h1>
     <div class="row">
         <div class="col-1 sketchy justify-content-center align-middle" style="margin: 5px; border: none;">
-
         </div>
         <div class="col sketchy" style="margin: 5px;">
             <h2>Urgent</h2>
@@ -25,57 +20,51 @@
                 <h2 style="writing-mode: tb-rl; transform: rotate(-180deg);">Important</h2>
             </div>
         </div>
-
         <div class="col sketchy" style="margin: 5px;">
             @foreach (var x in Model)
             {
-                @if (x.QuadrantNumber == 1)
-                {
-                  <div class="row">
-                      <div class="col">
-                          <p>@x.Task</p>
-                      </div>
-                      <div class="col">
-                          <p>@x.DueDate</p>
-                      </div>
-                      <div class="col-2 align-self-center greenButton">
-                          <a class="center" asp-controller="Home" asp-action="Edit" asp-route-entryid="@x.EntryId">Edit</a>
-                      </div>
-                      <div class="col-2 align-self-center redButton">
-                          <a style="text-decoration: none; color: inherit;" class="center" asp-controller="Home" asp-action="Delete" asp-route-EntryId="@x.EntryId">Delete</a>
-
-                      </div>
-                }
+            @if (x.QuadrantNumber == 1)
+            {
+            <div class="row">
+                <div class="col">
+                    <p>@x.Task</p>
+                </div>
+                <div class="col">
+                    <p>@x.DueDate</p>
+                </div>
+                <div class="col-2 align-self-center greenButton">
+                    <a class="center" asp-controller="Home" asp-action="Edit" asp-route-entryid="@x.EntryId">Edit</a>
+                </div>
+                <div class="col-2 align-self-center redButton">
+                    <a style="text-decoration: none; color: inherit;" class="center" asp-controller="Home" asp-action="Delete" asp-route-EntryId="@x.EntryId">Delete</a>
+                </div>
+            </div>
+            }
             }
         </div>
-
-
-
         <div class="col sketchy" style="margin: 5px;">
             @foreach (var x in Model)
             {
-                @if (x.QuadrantNumber == 2)
-                {
-                    <div class="row">
-                        <div class="col">
-                            <p>@x.Task</p>
-                        </div>
-                        <div class="col">
-                            <p>@x.DueDate</p>
-                        </div>
-                        <div class="col-2 align-self-center greenButton">
-                            <a class="center" asp-controller="Home" asp-action="Edit" asp-route-entryid="@x.EntryId">Edit</a>
-                        </div>
-                        <div class="col-2 align-self-center redButton">
-                            <a style="text-decoration: none; color: inherit;" class="center" asp-controller="Home" asp-action="Delete" asp-route-EntryId="@x.EntryId">Delete</a>
-                            
-                        </div>
-                    </div>
-                }
+            @if (x.QuadrantNumber == 2)
+            {
+            <div class="row">
+                <div class="col">
+                    <p>@x.Task</p>
+                </div>
+                <div class="col">
+                    <p>@x.DueDate</p>
+                </div>
+                <div class="col-2 align-self-center greenButton">
+                    <a class="center" asp-controller="Home" asp-action="Edit" asp-route-entryid="@x.EntryId">Edit</a>
+                </div>
+                <div class="col-2 align-self-center redButton">
+                    <a style="text-decoration: none; color: inherit;" class="center" asp-controller="Home" asp-action="Delete" asp-route-EntryId="@x.EntryId">Delete</a>
+                </div>
+            </div>
+            }
             }
         </div>
     </div>
-
     <div class="row">
         <div class="col-1 sketchy justify-content-center align-middle" style="margin: 5px;">
             <div style="display: flex; align-items: center; justify-content: center;" class="col">
@@ -85,47 +74,45 @@
         <div class="col sketchy" style="margin: 5px;">
             @foreach (var x in Model)
             {
-                @if (x.QuadrantNumber == 3)
-                {
-                    <div class="row">
-                        <div class="col">
-                            <p>@x.Task</p>
-                        </div>
-                        <div class="col">
-                            <p>@x.DueDate</p>
-                        </div>
-                        <div class="col-2 align-self-center greenButton">
-                            <a class="center" asp-controller="Home" asp-action="Edit" asp-route-entryid="@x.EntryId">Edit</a>
-                        </div>
-                        <div class="col-2 align-self-center redButton">
-                            <a style="text-decoration: none; color: inherit;" class="center" asp-controller="Home" asp-action="Delete" asp-route-EntryId="@x.EntryId">Delete</a>
-                        </div>
-                    </div>
-                }
+            @if (x.QuadrantNumber == 3)
+            {
+            <div class="row">
+                <div class="col">
+                    <p>@x.Task</p>
+                </div>
+                <div class="col">
+                    <p>@x.DueDate</p>
+                </div>
+                <div class="col-2 align-self-center greenButton">
+                    <a class="center" asp-controller="Home" asp-action="Edit" asp-route-entryid="@x.EntryId">Edit</a>
+                </div>
+                <div class="col-2 align-self-center redButton">
+                    <a style="text-decoration: none; color: inherit;" class="center" asp-controller="Home" asp-action="Delete" asp-route-EntryId="@x.EntryId">Delete</a>
+                </div>
+            </div>
+            }
             }
         </div>
         <div class="col sketchy" style="margin: 5px;">
             @foreach (var x in Model)
             {
-                @if (x.QuadrantNumber == 4)
-                {
-                    <div class="row">
-                        <div class="col">
-                            <p>@x.Task</p>
-                        </div>
-                        <div class="col">
-                            <p>@x.DueDate</p>
-                        </div>
-                        <div class="col-2 align-self-center greenButton">
-                            <a class="center" asp-controller="Home" asp-action="Edit" asp-route-entryid="@x.EntryId">Edit</a>
-                        </div>
-                        <div class="col-2 align-self-center redButton">
-                            <a style="text-decoration: none; color: inherit;" class="center" asp-controller="Home" asp-action="Delete" asp-route-EntryId="@x.EntryId">Delete</a>
-                        </div>
-                    </div>
-                }
+            @if (x.QuadrantNumber == 4)
+            {
+            <div class="row">
+                <div class="col">
+                    <p>@x.Task</p>
+                </div>
+                <div class="col">
+                    <p>@x.DueDate</p>
+                </div>
+                <div class="col-2 align-self-center greenButton">
+                    <a class="center" asp-controller="Home" asp-action="Edit" asp-route-entryid="@x.EntryId">Edit</a>
+                </div>
+                <div class="col-2 align-self-center redButton">
+                    <a style="text-decoration: none; color: inherit;" class="center" asp-controller="Home" asp-action="Delete" asp-route-EntryId="@x.EntryId">Delete</a>
+                </div>
+            </div>
+            }
             }
         </div>
     </div>
-
-</div>
